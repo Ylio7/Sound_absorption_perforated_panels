@@ -44,10 +44,10 @@ public class Programa extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
         modelo = new DefaultTableModel();
-        modelo.addColumn("<html>Banda de<br>Frecuencia</html>");
-        modelo.addColumn("<html>Absorbente<br>contra panel</html>");
-        modelo.addColumn("<html>Absorbente<br>contra muro</html>");
-        modelo.addColumn("<html>Sin cámara<br>de aire</html>");
+        modelo.addColumn("<html>Frequency<br>band</html>");
+        modelo.addColumn("<html>Absorbent<br>against panel</html>");
+        modelo.addColumn("<html>Absorbent<br>against backing</html>");
+        modelo.addColumn("No air gap");
         tblTabla.setModel(modelo);
         tblTabla.getTableHeader().setMaximumSize(new Dimension(10, 35));
         tblTabla.getTableHeader().setResizingAllowed(false);
@@ -102,7 +102,7 @@ public class Programa extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora de coeficientes de absorción de paneles perforados");
+        setTitle("Perforated Panel Absorption Coefficient Calculator");
         setResizable(false);
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -132,15 +132,15 @@ public class Programa extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Diseño del panel", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Panel design", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 14))); // NOI18N
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setText("Espesor del panel");
+        jLabel1.setText("Panel thickness");
 
         spiEspesor.setModel(new javax.swing.SpinnerNumberModel(12.0d, 1.0d, null, 1.0d));
         spiEspesor.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -178,7 +178,7 @@ public class Programa extends javax.swing.JFrame {
 
         jPanel4.setBorder(jPanel2.getBorder());
 
-        jLabel2.setText("Distancia de repetición");
+        jLabel2.setText("Repeat distance");
 
         spiDistancia.setModel(new javax.swing.SpinnerNumberModel(16.0d, null, null, 1.0d));
         spiDistancia.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -223,7 +223,7 @@ public class Programa extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Radio de perforación");
+        jLabel3.setText("Hole radius");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel7.setText("[mm]");
@@ -254,7 +254,7 @@ public class Programa extends javax.swing.JFrame {
 
         jPanel6.setBorder(jPanel2.getBorder());
 
-        jLabel4.setText("Cavidad");
+        jLabel4.setText("Cavity depth");
 
         spiCavidad.setModel(new javax.swing.SpinnerNumberModel(200.0d, null, null, 1.0d));
         spiCavidad.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -272,7 +272,7 @@ public class Programa extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spiCavidad, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -292,7 +292,7 @@ public class Programa extends javax.swing.JFrame {
 
         jPanel7.setBorder(jPanel2.getBorder());
 
-        jLabel5.setText("Espesor del absorbente");
+        jLabel5.setText("Absorber thickness");
 
         spiAbsorbente.setModel(new javax.swing.SpinnerNumberModel(50.0d, null, null, 1.0d));
         spiAbsorbente.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -310,12 +310,12 @@ public class Programa extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(spiAbsorbente, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,7 +343,7 @@ public class Programa extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,14 +357,14 @@ public class Programa extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Área abierta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Open area", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 12))); // NOI18N
 
         lblArea.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblArea.setText("% Área abierta:");
 
         lblAdvierte.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
         lblAdvierte.setForeground(java.awt.Color.red);
-        lblAdvierte.setText("demasiado alto");
+        lblAdvierte.setText("too high");
         lblAdvierte.setAlignmentX(100);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -388,23 +388,33 @@ public class Programa extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Bandas de frecuencia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 12))); // NOI18N
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Frequency bands", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 2, 12))); // NOI18N
         jPanel10.setPreferredSize(new java.awt.Dimension(210, 55));
 
         buttonGroup1.add(rbtnFreq1);
-        rbtnFreq1.setText("Octavas");
+        rbtnFreq1.setText("Octaves");
         rbtnFreq1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 rbtnFreq1StateChanged(evt);
             }
         });
+        rbtnFreq1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnFreq1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbtnFreq3);
         rbtnFreq3.setSelected(true);
-        rbtnFreq3.setText("1/3 de Octavas");
+        rbtnFreq3.setText("1/3 Octaves");
         rbtnFreq3.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 rbtnFreq3StateChanged(evt);
+            }
+        });
+        rbtnFreq3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnFreq3ActionPerformed(evt);
             }
         });
 
@@ -464,7 +474,7 @@ public class Programa extends javax.swing.JFrame {
         );
 
         jButton1.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jButton1.setText("Exportar valores");
+        jButton1.setText("Export results");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -494,8 +504,8 @@ public class Programa extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -505,9 +515,10 @@ public class Programa extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 259, Short.MAX_VALUE))
                             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,6 +537,8 @@ public class Programa extends javax.swing.JFrame {
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("Panel design");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -565,6 +578,14 @@ public class Programa extends javax.swing.JFrame {
         calcular();        // TODO add your handling code here:
         spiAbsorbente.nextFocus();
     }//GEN-LAST:event_spiAbsorbenteStateChanged
+
+    private void rbtnFreq3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnFreq3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnFreq3ActionPerformed
+
+    private void rbtnFreq1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnFreq1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnFreq1ActionPerformed
 
     private void calcular() {
         double espesorPanel = Double.parseDouble(spiEspesor.getValue().toString());
@@ -619,11 +640,11 @@ public class Programa extends javax.swing.JFrame {
             String dominio = "";
             if (rbtnFreq1.isSelected()) {
                 fraccion = 1;
-                dominio = "Banda de octava [Hz]";
+                dominio = "Octave band [Hz]";
             }
             if (rbtnFreq3.isSelected()) {
                 fraccion = 3;
-                dominio = "Banda de 1/3 de octava [Hz]";
+                dominio = "1/3 Octave band [Hz]";
             }
 
             // Instancio el perforado y obtengo sus coeficientes para las tres configuraciones y sus freq
@@ -635,9 +656,9 @@ public class Programa extends javax.swing.JFrame {
             double freq[] = P.getFreq();
 
             // Creo las series que se usarán para graficar
-            final String seriesAbs1 = "Absorbente contra panel";
-            final String seriesAbs2 = "Absorbente contra muro";
-            final String seriesAbs3 = "Sin cámara de aire";
+            final String seriesAbs1 = "Absorbent against panel";
+            final String seriesAbs2 = "Absorbent against backing";
+            final String seriesAbs3 = "No air gap";
 
             // Creo el dataset que contendrá las 3 series
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -677,7 +698,7 @@ public class Programa extends javax.swing.JFrame {
 
             // Seteo el gráfico
             JFreeChart chart = ChartFactory.createLineChart(
-                    "Coeficientes de absorción de paneles perforados",
+                    "Absorption coefficients of perforated panels",
                     dominio,
                     "",
                     dataset,
@@ -718,20 +739,20 @@ public class Programa extends javax.swing.JFrame {
     }
 
     private void Exporta() {
-        String[] formatos = {"Portapapeles", "Archivo de texto"};
-        int opcion = JOptionPane.showOptionDialog(null, "Enviar datos a", "Exportar datos", 0, JOptionPane.QUESTION_MESSAGE, null, formatos, "Portapapeles");
+        String[] formatos = {"Clipboard", "Text file"};
+        int opcion = JOptionPane.showOptionDialog(null, "Send results to", "Export", 0, JOptionPane.QUESTION_MESSAGE, null, formatos, "Clipboard");
         switch (opcion) {
             case 0: // Portapapeles
 
                 ActionEvent evn = new ActionEvent(tblTabla, ActionEvent.ACTION_PERFORMED, "copy");
                 // como el método comun no me toma los headers, agrego una fila superior con eso y luego la borro
-                modelo.insertRow(0,new Object[]{"Banda de frecuencia", "Absorbente contra panel", "Absorbente contra muro", "Sin cámara de aire"});
+                modelo.insertRow(0,new Object[]{"Frequency band", "Absorbent against panel", "Absorbent against backing", "No air gap"});
                 tblTabla.selectAll();
                 tblTabla.getActionMap().get(evn.getActionCommand()).actionPerformed(evn);
                 tblTabla.clearSelection();
                 modelo.removeRow(0);
                 
-                JOptionPane.showMessageDialog(null, "Datos copiados al portapapels", "Exportar datos", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data copied to clipboard", "Export", JOptionPane.INFORMATION_MESSAGE);
                 break;
 
             case 1: // Archivo .txt
@@ -740,11 +761,11 @@ public class Programa extends javax.swing.JFrame {
                 FileFilter filter = new FileNameExtensionFilter("*.txt", "txt");
                 fileChooser.setCurrentDirectory(new java.io.File("."));
 
-                fileChooser.setDialogTitle("Guardar archivo de texto");
+                fileChooser.setDialogTitle("Save text file");
                 fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 fileChooser.setAcceptAllFileFilterUsed(false);
                 fileChooser.setFileFilter(filter);
-                fileChooser.setSelectedFile(new File("Coeficientes panel perforado"));
+                fileChooser.setSelectedFile(new File("Absorption coefficients of perforated panel.txt"));
 
                 int seleccion = fileChooser.showSaveDialog(jPanel1);
 
@@ -757,8 +778,8 @@ public class Programa extends javax.swing.JFrame {
                         if (fileChooser.getSelectedFile().exists()) {
                             //  Preguntar para sobreescribir
 
-                            String[] si_no = {"Sí", "No"};
-                            int ans = JOptionPane.showOptionDialog(null, "Desea sobreescribir el archivo?", "Sobreescritura", 0, JOptionPane.QUESTION_MESSAGE, null, si_no, "Sí");
+                            String[] si_no = {"Yes", "No"};
+                            int ans = JOptionPane.showOptionDialog(null, "The file already exists. Overwrite?", "Overwrite", 0, JOptionPane.QUESTION_MESSAGE, null, si_no, "Yes");
                             System.out.println(ans);
 
                             if (ans == JOptionPane.YES_OPTION) {
@@ -767,10 +788,10 @@ public class Programa extends javax.swing.JFrame {
                                 BufferedWriter bw = new BufferedWriter(fw);
 
                                 // Nombro las columnas y las tabulo (\t)
-                                bw.write("Banda de frecuencia" + "\t");
-                                bw.write("Absorbente contra panel" + "\t");
-                                bw.write("Absorbente contra muro" + "\t");
-                                bw.write("Sin cámara de aire" + "\n");
+                                bw.write("Frequency band" + "\t");
+                                bw.write("Absorbent against panel" + "\t");
+                                bw.write("Absorbent against backing" + "\t");
+                                bw.write("No air gap" + "\n");
 
                                 // Leo las filas
                                 for (int i = 0; i < tblTabla.getRowCount(); i++) {
@@ -792,10 +813,10 @@ public class Programa extends javax.swing.JFrame {
                             BufferedWriter bw = new BufferedWriter(fw);
 
                             // Nombro las columnas y las tabulo (\t)
-                            bw.write("Banda de frecuencia" + "\t");
-                            bw.write("Absorbente contra panel" + "\t");
-                            bw.write("Absorbente contra muro" + "\t");
-                            bw.write("Sin cámara de aire" + "\n");
+                            bw.write("Frequency band" + "\t");
+                            bw.write("Absorbent against panel" + "\t");
+                            bw.write("Absorbent against backing" + "\t");
+                            bw.write("No air gap" + "\n");
 
                             // Leo las filas
                             for (int i = 0; i < tblTabla.getRowCount(); i++) {
